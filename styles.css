@@ -30,13 +30,20 @@ body {
     margin-bottom: 20px;
 }
 
-.potential-components {
+.right-section {
     width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.potential-components {
     background-color: #222;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    margin-left: 20px;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 h2 {
@@ -90,4 +97,19 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#submitButton {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submitButton:hover {
+    background-color: #ff4d4d;
 }
