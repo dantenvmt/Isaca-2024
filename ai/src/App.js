@@ -132,7 +132,7 @@ const LineChartComponent = () => {
 
 
   const successRate = generateRandomNumber(50, 100);
-  const successRateColor = successRate < 75 ? 'red' : successRate < 85 ? 'yellow' : 'green';
+  const successRateColor = successRate < 65 ? 'red' : successRate < 85 ? 'yellow' : 'green';
 
   return (
     <div style={{ background: '#22272d', color: '#adbac7', borderRadius: '3px', padding: '1rem', overflow: 'hidden', width: '800px' }}>
