@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import CalHeatmap from 'cal-heatmap';
 import 'cal-heatmap/cal-heatmap.css';
 import Tooltip from 'cal-heatmap/plugins/Tooltip';
-import LegendLite from 'cal-heatmap/plugins/Legend';
+import LegendLite from 'cal-heatmap/plugins/LegendLite';
 function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -13,7 +13,7 @@ function generateRandomData(startDate, endDate) {
   while (currentDate <= endDate) {
     data.push({
       date: currentDate.toISOString().slice(0, 10),
-      value: generateRandomNumber(0, 2),
+      value: generateRandomNumber(0, 20),
     });
     currentDate.setDate(currentDate.getDate() + 1);
   }
@@ -44,10 +44,10 @@ const App = () => {
       range: month,
       scale: {
         color: {
-          type: 'quantize',
-          range: ['green', 'yellow', 'red'],
+          type: 'threshold',
+          range: ['#14432a', '#166b34', '#37a446', '#4dd05a'],
           interpolate: 'hsl',
-          domain: [0, 1, 2],
+          domain: [10, 15, 20],
         },
       },
       domain: {
@@ -63,27 +63,47 @@ const App = () => {
         Tooltip,
         {
           text: function (date, value, dayjsDate) {
-            let taskDifficulty = '';
-            if (value === 0) {
-              taskDifficulty = 'No task';
-            } else if (value === 1) {
-              taskDifficulty = 'Easy task';
-            } else if (value === 2) {
-              taskDifficulty = 'Hard task';
-            }
-            return taskDifficulty + ' on ' + dayjsDate.format('LL');
+            return (
+              (value ? value : 'No') +
+              ' Tasks on ' +
+              dayjsDate.format('dddd, MMMM D, YYYY')
+            );
           },
         },
       ],
-     ,
+      [
+        LegendLite,
+        {
+          itemSelector: '#ex-ghDay-legend',
+          radius: 2,
+          width: 11,
+          height: 11,
+          gutter: 4,
+        },
+      ],
     ]);
   }, []);
 
   return (
-    <div style={{ display: 'inline-block' }}>
-      <div ref={calRef}></div>
-      <div id="ex-wind-legend" style={{ float: 'right' }}></div>
+    <div
+    style={{
+      background: '#22272d',
+      color: '#adbac7',
+      borderRadius: '3px',
+      padding: '1rem',
+      overflow: 'hidden',
+    }}
+  >
+    <div ref={calRef}></div>
+    <div style={{ float: 'right', fontSize: 12 }}>
+      <span style={{ color: '#768390' }}>Less</span>
+      <div
+        id="ex-ghDay-legend"
+        style={{ display: 'inline-block', margin: '0 4px' }}
+      ></div>
+      <span style={{ color: '#768390', fontSize: 12 }}>More</span>
     </div>
+  </div>
   );
 };
 
