@@ -83,7 +83,7 @@ const Graph = () => {
       <div className="bell-curve-container">
         <h1 className="title">Current Task Progress</h1>
         <div className="bell-curve-content">
-          <div className="bell-curve-label">Completed<h2>95%</h2></div>
+          <div className="bell-curve-label">Completed<h2>75%</h2></div>
           <div className="bell-curve-graph">
             <svg viewBox={`0 0 ${graphWidth} ${graphHeight}`}>
               {bellCurveData.map((value, index) => (
