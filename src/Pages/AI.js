@@ -89,6 +89,7 @@ const CalendarHeatmap = () => {
 
   return (
     <div style={{ background: '#22272d', color: '#adbac7', borderRadius: '3px', padding: '1rem', overflow: 'hidden', marginBottom: '2rem', width: '800px'}}>
+      <div><h1 className="title">Manufacturing Calendar Scheduling</h1></div>
       <div ref={calRef}></div>
       <div style={{ float: 'right', fontSize: 12 }}>
         <span style={{ color: '#768390' }}>Less</span>
