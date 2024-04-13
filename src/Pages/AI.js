@@ -158,10 +158,13 @@ const LineChartComponent = () => {
 const AI = () => {
   return (
     <div>
+      <div>
+      <h1 className="title">Manufacturing Calendar Scheduling</h1>
+      </div>
       <CalendarHeatmap />
       <LineChartComponent />
       <Link to="/Graph">
-            <button id="submitButton">Submit</button>
+            <button id="submitButton">Build Automated Process</button>
           </Link>
     </div>
   );
