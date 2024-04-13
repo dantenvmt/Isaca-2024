@@ -34,8 +34,10 @@ const Graph = () => {
   const percentage = (totalSolved / totalProblems) * 100;
 
   return (
+    <div>
+                <h1 className="title">Controlling and Monitoring Production Procedures</h1>
     <div className="graph-container">
-        <h1 className="title">Controlling and Monitoring Production Procedures</h1>
+
       <div className="problems-solved-text">Tasks Completed</div>
       <div className="graphs">
         <div className="circular-progress-container">
@@ -72,6 +74,7 @@ const Graph = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
