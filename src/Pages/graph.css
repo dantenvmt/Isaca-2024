@@ -74,7 +74,8 @@
     transform: translateY(-50%);
     color: #fff;
     font-size: 14px;
-  }/* graph.css */
+  }
+  /* graph.css */
 /* ... (previous styles) */
 
 .bell-curve-container {
@@ -86,6 +87,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  
+  .bell-curve-content {
+    position: relative;
+    width: 100%;
   }
   
   .bell-curve-graph {
@@ -104,8 +110,12 @@
   }
   
   .bell-curve-label {
+    position: absolute;
+    top: -20px;
+    left: 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
-    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
   }

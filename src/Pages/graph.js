@@ -81,20 +81,23 @@ const Graph = () => {
         </div>
       </div>
       <div className="bell-curve-container">
-      <h1 className="title">Current Task Completed</h1>
-        <div className="bell-curve-graph">
-          <svg viewBox={`0 0 ${graphWidth} ${graphHeight}`}>
-            {bellCurveData.map((value, index) => (
-              <rect
-                key={index}
-                x={index * 10}
-                y={graphHeight - value * 2}
-                width="10"
-                height={value * 2}
-                fill={index === highlightedColumn ? '#ff9800' : '#888'}
-              />
-            ))}
-          </svg>
+        <h1 className="title">Current Task Progress</h1>
+        <div className="bell-curve-content">
+          <div className="bell-curve-label">Completed<h2>95%</h2></div>
+          <div className="bell-curve-graph">
+            <svg viewBox={`0 0 ${graphWidth} ${graphHeight}`}>
+              {bellCurveData.map((value, index) => (
+                <rect
+                  key={index}
+                  x={index * 10}
+                  y={graphHeight - value * 2}
+                  width="10"
+                  height={value * 2}
+                  fill={index === highlightedColumn ? '#ff9800' : '#888'}
+                />
+              ))}
+            </svg>
+          </div>
         </div>
       </div>
     </div>
