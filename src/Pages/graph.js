@@ -13,7 +13,7 @@ const data = [
     color: '#4caf50',
   },
   {
-    name: 'Milestone 2 -  Testing Tasks',
+    name: 'Milestone 2 - Testing Tasks',
     value: 1170,
     total: 1624,
     beats: 99.98,
@@ -35,35 +35,41 @@ const Graph = () => {
 
   return (
     <div className="graph-container">
-      <div className="circular-progress-container">
-        <div className="problems-solved-text">Tasked Completed</div>
-        <CircularProgressbar
-          value={percentage}
-          text={`${totalSolved}`}
-          strokeWidth={10}
-          styles={buildStyles({
-            pathColor: '#0088FE',
-            textColor: '#fff',
-            trailColor: '#444',
-            backgroundColor: '#1c1c1c',
-          })}
-        />
-      </div>
-      <div className="horizontal-progress-container">
-        {data.map((item, index) => (
-          <div key={index} className="task-progress">
-            <div className="task-name">{item.name}</div>
-            <div className={`progress-bar progress-bar-${item.name.toLowerCase()}`}>
-              <div
-                className="progress-fill"
-                style={{ width: `${(item.value / item.total) * 100}%`, backgroundColor: item.color }}
-              />
-              <div className="progress-text">
-                {item.value} / {item.total}
+      <div className="problems-solved-text">Tasks Completed</div>
+      <div className="graphs">
+        <div className="circular-progress-container">
+          <CircularProgressbar
+            value={percentage}
+            text={`${totalSolved}`}
+            strokeWidth={5}
+            styles={buildStyles({
+              textSize: '16px',
+              pathColor: '#0088FE',
+              textColor: '#fff',
+              trailColor: '#00447f',
+              backgroundColor: '#1c1c1c',
+            })}
+          />
+        </div>
+        <div className="horizontal-progress-container">
+          {data.map((item, index) => (
+            <div key={index} className="task-progress">
+              <div className="task-name">{item.name}</div>
+              <div className={`progress-bar progress-bar-milestone-${index + 1}`}>
+                <div
+                  className="progress-fill"
+                  style={{
+                    width: `${(item.value / item.total) * 100}%`,
+                    backgroundColor: item.color,
+                  }}
+                />
+                <div className="progress-text">
+                  {item.value} / {item.total}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
