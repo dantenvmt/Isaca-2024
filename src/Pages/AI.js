@@ -140,7 +140,7 @@ const LineChartComponent = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
         <h3 style={{ margin: 0 }}>Cumulative Costs Over Time</h3>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <span style={{ marginRight: '0.5rem' }}>Success Rate:</span>
+          <span style={{ marginRight: '0.5rem' }}>Predicted Success Rate:</span>
           <span style={{ color: successRateColor, fontWeight: 'bold' }}>{successRate}%</span>
         </div>
       </div>

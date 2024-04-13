@@ -134,13 +134,8 @@ const Home = () => {
               </ul>
             </div>
           </div>
+
           <div className="middle-section">
-            <h2>Selected Specification</h2>
-            <div className="selected-components">
-              <div id="selectedCategories"></div>
-            </div>
-          </div>
-          <div className="right-section">
             <h2>New Specification</h2>
             <div className="potential-components">
               <select id="categorySelect">
@@ -153,6 +148,12 @@ const Home = () => {
             <Link to="/AI">
               <button id="submitButton">Verify New Specification</button>
             </Link>
+          </div>
+          <div className="right-section">
+            <h2>Selected Specification</h2>
+            <div className="selected-components">
+              <div id="selectedCategories"></div>
+            </div>
           </div>
         </div>
       </div>
