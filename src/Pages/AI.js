@@ -159,7 +159,7 @@ const AI = () => {
   return (
     <div>
       <div>
-      <h1 className="title">Manufacturing Calendar Scheduling</h1>
+      <h1 className="title">Verification of New Configuration</h1>
       </div>
       <CalendarHeatmap />
       <LineChartComponent />
