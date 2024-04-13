@@ -7,76 +7,90 @@ body {
     color: #fff;
     justify-content: center;
     align-items: center;
-}
-#root{
+  }
+  
+  #root {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-.divshit{
+  }
+  
+  .divshit {
     width: 100%;
     display: flex;
     justify-content: center;
-}
-.container {
+  }
+  
+  .container {
     display: flex;
+    flex-direction: column;
     width: 80%;
     height: 80%;
     margin-bottom: 20px;
-}
-
-.left-section {
-    width: 50%;
-    padding: 20px;
-}
-
-.existing-components,
-.selected-components {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
     margin-bottom: 20px;
-}
-
-.right-section {
-    width: 50%;
+    color: #fff;
+  }
+  
+  .content {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .left-section,
+  .middle-section,
+  .right-section {
     padding: 20px;
     display: flex;
     flex-direction: column;
-}
-
-.potential-components {
+  }
+  
+  .left-section,
+  .middle-section {
+    flex-basis: 30%;
+  }
+  
+  .right-section {
+    flex-basis: 40%;
+  }
+  
+  .existing-components,
+  .selected-components,
+  .potential-components {
     background-color: #222;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     margin-bottom: 20px;
     flex-grow: 1;
-}
-
-h2 {
+  }
+  
+  h2 {
     margin-top: 0;
-}
-
-ul {
+  }
+  
+  ul {
     list-style-type: none;
     padding: 0;
-}
-
-li {
+  }
+  
+  li {
     cursor: pointer;
     padding: 10px;
     background-color: #333;
     margin-bottom: 10px;
     border-radius: 5px;
-}
-
-li:hover {
+  }
+  
+  li:hover {
     background-color: #444;
-}
-
-.remove-button {
+  }
+  
+  .remove-button {
     margin-left: 10px;
     padding: 5px 10px;
     background-color: #ff4d4d;
@@ -84,31 +98,17 @@ li:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.category {
+  }
+  
+  .category {
     margin-bottom: 20px;
-}
-
-.category h3 {
+  }
+  
+  .category h3 {
     margin-top: 0;
-}
-
-.button-container {
-    margin-top: 20px;
-}
-
-button {
-    margin-right: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#submitButton {
+  }
+  
+  #submitButton {
     align-self: flex-end;
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -117,8 +117,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-#submitButton:hover {
+  }
+  
+  #submitButton:hover {
     background-color: #ff4d4d;
-}
+  }

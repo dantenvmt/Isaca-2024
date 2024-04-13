@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const [selectedComponents, setSelectedComponents] = useState({
-    category1: [],
-    category2: [],
-    category3: []
+    Reliability: [],
+    Facilities: [],
+    Interface: []
   });
 
   const allComponents = useMemo(() => ({
-    category1: ['Component 1', 'Component 2', 'Component 3'],
-    category2: ['Component 4', 'Component 5', 'Component 6'],
-    category3: ['Component 7', 'Component 8', 'Component 9']
+    Reliability: ['MTBF: > 20,000hrs', 'MTTR: < 2hrs', 'Uptime: 98%'],
+    Facilities: ['Chiller Fluid: 20°C @ > 1.7 GPM, 60 PSIG', 'Vacuum: 17 in-Hg min @ 1.5 SCFM', 'CDA: 60-90 PSIG, 1 SCFM'],
+    Interface: ['Standard hardware BOLTS interface.', 'Custom hardware interfaces available.']
   }), []);
 
   const handlePotentialListClick = useCallback((event) => {
@@ -123,32 +123,37 @@ const Home = () => {
   return (
     <div className='divshit'>
       <div className="container">
-        <div className="left-section">
-          <div className="existing-components">
-            <h2>Existing Components</h2>
-            <ul id="existingList">
-              <li>Existing Component 1 <button className="remove-button">Remove</button></li>
-              <li>Existing Component 2 <button className="remove-button">Remove</button></li>
-            </ul>
+        <h1 className="title">Manufacturing Intelligent: Design Optimization</h1>
+        <div className="content">
+          <div className="left-section">
+            <h2>Current Specification for Wafer Heating & Cooling Stations</h2>
+            <div className="existing-components">
+              <ul id="existingList">
+                <li>Front side: &lt; 1 @ 0.1 µm, PWP<button className="remove-button">Remove</button></li>
+                <li>Backside: &lt; 1,400 @ 0.2 µm, PWP<button className="remove-button">Remove</button></li>
+              </ul>
+            </div>
           </div>
-          <div className="selected-components">
-            <h2>Selected Components</h2>
-            <div id="selectedCategories"></div>
+          <div className="middle-section">
+            <h2>Selected Specification</h2>
+            <div className="selected-components">
+              <div id="selectedCategories"></div>
+            </div>
           </div>
-        </div>
-        <div className="right-section">
-          <div className="potential-components">
-            <h2>Potential Components</h2>
-            <select id="categorySelect">
-              <option value="category1">Category 1</option>
-              <option value="category2">Category 2</option>
-              <option value="category3">Category 3</option>
-            </select>
-            <ul id="potentialList"></ul>
+          <div className="right-section">
+            <h2>New Specification</h2>
+            <div className="potential-components">
+              <select id="categorySelect">
+                <option value="Reliability">Reliability</option>
+                <option value="Facilities">Facilities</option>
+                <option value="Interface">Interface</option>
+              </select>
+              <ul id="potentialList"></ul>
+            </div>
+            <Link to="/AI">
+              <button id="submitButton">Verify New Specification</button>
+            </Link>
           </div>
-          <Link to="/AI">
-            <button id="submitButton">Submit</button>
-          </Link>
         </div>
       </div>
     </div>
