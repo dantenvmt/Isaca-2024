@@ -163,6 +163,9 @@ const AI = () => {
       </div>
       <CalendarHeatmap />
       <LineChartComponent />
+      <div>
+      <br></br>
+      </div>
       <Link to="/Graph">
             <button id="submitButton">Build Automated Process</button>
           </Link>
