@@ -46,7 +46,7 @@ const Home = () => {
       selectedCategories.removeEventListener('click', handleSelectedCategoriesClick);
       existingList.removeEventListener('click', handleExistingListClick);
     };
-  }, []);
+  });
 
   const handlePotentialListClick = (event) => {
     if (event.target.tagName === 'LI') {

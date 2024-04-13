@@ -84,7 +84,7 @@ const CalendarHeatmap = () => {
         },
       ],
     ]);
-  }, []);
+  });
 
   return (
     <div style={{ background: '#22272d', color: '#adbac7', borderRadius: '3px', padding: '1rem', overflow: 'hidden', marginBottom: '2rem', width: '800px'}}>
