@@ -89,7 +89,7 @@ const CalendarHeatmap = () => {
 
   return (
     <div style={{ background: '#22272d', color: '#adbac7', borderRadius: '3px', padding: '1rem', overflow: 'hidden', marginBottom: '2rem', width: '800px'}}>
-      <div><h1 className="title">Manufacturing Calendar Scheduling</h1></div>
+      <div><h1 className="title">Proposal Manufacturing Calendar</h1></div>
       <div ref={calRef}></div>
       <div style={{ float: 'right', fontSize: 12 }}>
         <span style={{ color: '#768390' }}>Less</span>
@@ -139,7 +139,7 @@ const LineChartComponent = () => {
   return (
     <div style={{ background: '#22272d', color: '#adbac7', borderRadius: '3px', padding: '1rem', overflow: 'hidden', width: '800px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-        <h3 style={{ margin: 0 }}>Cumulative Costs Over Time</h3>
+        <h3 style={{ margin: 0 }}>Predicted Cumulative Costs Over Time</h3>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <span style={{ marginRight: '0.5rem' }}>Predicted Success Rate:</span>
           <span style={{ color: successRateColor, fontWeight: 'bold' }}>{successRate}%</span>

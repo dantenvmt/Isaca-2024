@@ -35,7 +35,7 @@ const Graph = () => {
 
   return (
     <div>
-                <h1 className="title">Controlling and Monitoring Production Procedures</h1>
+                <h1 className="title">Controlling and Monitoring Production Dashboards</h1>
     <div className="graph-container">
 
       <div className="problems-solved-text">Tasks Completed</div>
