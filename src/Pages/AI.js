@@ -4,6 +4,7 @@ import 'cal-heatmap/cal-heatmap.css';
 import Tooltip from 'cal-heatmap/plugins/Tooltip';
 import LegendLite from 'cal-heatmap/plugins/LegendLite';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { Link } from "react-router-dom";
 
 function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -159,6 +160,9 @@ const AI = () => {
     <div>
       <CalendarHeatmap />
       <LineChartComponent />
+      <Link to="/Graph">
+            <button id="submitButton">Submit</button>
+          </Link>
     </div>
   );
 };

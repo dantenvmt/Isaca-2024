@@ -1,0 +1,75 @@
+/* Graph.css */
+.graph-container {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 500px;
+    height: 250px;
+    margin: auto;
+    display: flex;
+  }
+  
+  .circular-progress-container {
+    width: 250px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .problems-solved-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .horizontal-progress-container {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .task-progress {
+    margin-bottom: 10px;
+  }
+  
+  .task-name {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .progress-bar {
+    border-radius: 20px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress-bar-easy {
+    background-color: #388e3c;
+  }
+  
+  .progress-bar-medium {
+    background-color: #f57c00;
+  }
+  
+  .progress-bar-hard {
+    background-color: #d32f2f;
+  }
+  
+  .progress-fill {
+    border-radius: 20px;
+    height: 100%;
+  }
+  
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 14px;
+  }

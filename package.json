@@ -9,6 +9,7 @@
     "cal-heatmap": "^4.2.4",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
