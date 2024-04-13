@@ -1,7 +1,6 @@
 import './Home.css';
 import React, { useEffect, useRef } from 'react';
 import {
-  BrowserRouter as Router,
   Link,
 } from "react-router-dom";
 const Home = () => {
@@ -158,10 +157,13 @@ const Home = () => {
             <ul id="potentialList" ref={potentialListRef}></ul>
           </div>
           <Link to="/AI">
-            <button id="submitButton">Submit</button>
+            <button id="submitButton" >Submit</button>
           </Link>
+
         </div>
+        
       </div>
+
     </div>
   );
 };
