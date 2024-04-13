@@ -1,0 +1,2 @@
+(self.webpackChunkai=self.webpackChunkai||[]).push([[3513],{3513:function(e){e.exports=function(){"use strict";return{name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_"),ordinal:function(e){var a=["th","st","nd","rd"],r=e%100;return"["+e+(a[(r-20)%10]||a[r]||a[0])+"]"}}}()}}]);
+//# sourceMappingURL=3513.b6c3d11a.chunk.js.map
