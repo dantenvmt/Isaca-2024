@@ -123,7 +123,7 @@ const Home = () => {
   return (
     <div className='divshit'>
       <div className="container">
-        <h1 className="title">Manufacturing Intelligent: Design Optimization</h1>
+        <h1 className="title">Manufacturing Intelligence: Design Optimization</h1>
         <div className="content">
           <div className="left-section">
             <h2>Current Specification for Wafer Heating & Cooling Stations</h2>
