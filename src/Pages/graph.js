@@ -31,7 +31,6 @@ const generateRandomData = () => {
 };
 
 const generateBellCurveData = () => {
-  const mean = 10;
   const stdDev = 3;
   const dataPoints = 18;
   const data = [];
