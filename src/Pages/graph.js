@@ -1,40 +1,60 @@
-// Graph.js
 import React from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './graph.css';
+import { Link } from "react-router-dom";
 
-const data = [
-  {
-    name: 'Milestone 1 - Deployment Tasks',
-    value: 580,
-    total: 783,
-    beats: 99.96,
-    color: '#4caf50',
-  },
-  {
-    name: 'Milestone 2 - Testing Tasks',
-    value: 1170,
-    total: 1624,
-    beats: 99.98,
-    color: '#ffa500',
-  },
-  {
-    name: 'Milestone 3 - Monitoring Tasks',
-    value: 250,
-    total: 687,
-    beats: 99.8,
-    color: '#f44336',
-  },
-];
+const generateRandomData = () => {
+  return [
+    {
+      name: 'Milestone 1 - Deployment Tasks',
+      value: Math.floor(Math.random() * 501) + 500,
+      total: Math.floor(Math.random() * 1001) + 1000,
+      beats: 99.96,
+      color: '#4caf50',
+    },
+    {
+      name: 'Milestone 2 - Testing Tasks',
+      value: Math.floor(Math.random() * 501) + 500,
+      total: Math.floor(Math.random() * 1001) + 1000,
+      beats: 99.98,
+      color: '#ffa500',
+    },
+    {
+      name: 'Milestone 3 - Monitoring Tasks',
+      value: Math.floor(Math.random() * 501) + 500,
+      total: Math.floor(Math.random() * 1001) + 1000,
+      beats: 99.8,
+      color: '#f44336',
+    },
+  ];
+};
+
+const generateBellCurveData = () => {
+  const mean = 10;
+  const stdDev = 3;
+  const dataPoints = 18;
+  const data = [];
+
+  for (let i = 0; i < dataPoints; i++) {
+    const x = i - dataPoints / 2;
+    const exponent = -0.5 * Math.pow(x / stdDev, 2);
+    const y = Math.exp(exponent) / (stdDev * Math.sqrt(2 * Math.PI));
+    data.push(Math.round(y * 100));
+  }
+
+  return data;
+};
 
 const Graph = () => {
+  const data = generateRandomData();
+
   const totalSolved = data.reduce((sum, item) => sum + item.value, 0);
   const totalProblems = data.reduce((sum, item) => sum + item.total, 0);
   const percentage = (totalSolved / totalProblems) * 100;
 
-  const bellCurveData = [2, 3,4,5,10,12,13,15,12,9,7,5,4, 3,2, 1,1, 1];
-  const highlightedColumn = 12;
+  const bellCurveData = generateBellCurveData();
+  const highlightedColumn = Math.floor((percentage / 100) * bellCurveData.length);
 
   const graphWidth = bellCurveData.length * 10;
   const graphHeight = Math.max(...bellCurveData) * 2;
@@ -48,7 +68,7 @@ const Graph = () => {
           <div className="circular-progress-container">
             <CircularProgressbar
               value={percentage}
-              text={`${totalSolved}`}
+              text={`${Math.round(percentage)}%`}
               strokeWidth={5}
               styles={buildStyles({
                 textSize: '16px',
@@ -83,7 +103,10 @@ const Graph = () => {
       <div className="bell-curve-container">
         <h1 className="title">Current Task Progress</h1>
         <div className="bell-curve-content">
-          <div className="bell-curve-label">Completed<h2>75%</h2></div>
+          <div className="bell-curve-label">
+            Completed
+            <h2>{Math.round(percentage)}%</h2>
+          </div>
           <div className="bell-curve-graph">
             <svg viewBox={`0 0 ${graphWidth} ${graphHeight}`}>
               {bellCurveData.map((value, index) => (
@@ -99,7 +122,12 @@ const Graph = () => {
             </svg>
           </div>
         </div>
+
       </div>
+      <br></br>
+      <Link to="/">
+            <button id="submitButton">Try out different build</button>
+          </Link>
     </div>
   );
 };
