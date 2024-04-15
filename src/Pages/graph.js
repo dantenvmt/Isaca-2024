@@ -1,3 +1,4 @@
+// Graph.js
 import React from 'react';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -53,7 +54,9 @@ const Graph = () => {
   const percentage = (totalSolved / totalProblems) * 100;
 
   const bellCurveData = generateBellCurveData();
-  const highlightedColumn = Math.floor((percentage / 100) * bellCurveData.length);
+  const bellCurvePercentage = Math.floor(Math.random() * 99) + 1;
+
+  const highlightedColumn = Math.floor((bellCurvePercentage / 100) * bellCurveData.length);
 
   const graphWidth = bellCurveData.length * 10;
   const graphHeight = Math.max(...bellCurveData) * 2;
@@ -67,7 +70,7 @@ const Graph = () => {
           <div className="circular-progress-container">
             <CircularProgressbar
               value={percentage}
-              text={`${Math.round(percentage)}%`}
+              text={`${totalSolved}`}
               strokeWidth={5}
               styles={buildStyles({
                 textSize: '16px',
@@ -104,7 +107,7 @@ const Graph = () => {
         <div className="bell-curve-content">
           <div className="bell-curve-label">
             Completed
-            <h2>{Math.round(percentage)}%</h2>
+            <h2>{bellCurvePercentage}%</h2>
           </div>
           <div className="bell-curve-graph">
             <svg viewBox={`0 0 ${graphWidth} ${graphHeight}`}>
@@ -125,8 +128,8 @@ const Graph = () => {
       </div>
       <br></br>
       <Link to="/">
-            <button id="submitButton">Try out different build</button>
-          </Link>
+        <button id="submitButton">Try out different build</button>
+      </Link>
     </div>
   );
 };

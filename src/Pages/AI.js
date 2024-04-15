@@ -133,7 +133,7 @@ const LineChartComponent = () => {
   };
 
 
-  const successRate = generateRandomNumber(50, 100);
+  const successRate = generateRandomNumber(80, 100);
   const successRateColor = successRate < 65 ? 'red' : successRate < 85 ? 'yellow' : 'green';
 
   return (
